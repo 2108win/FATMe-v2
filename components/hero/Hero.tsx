@@ -20,7 +20,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="px-4 mt-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+    <div className="container grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
       <div className="flex flex-col gap-10">
         <HeadingText
           smallTitle="Chúng tôi"

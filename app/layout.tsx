@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
+import { Rubik } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
 
-const source_sans_3 = Source_Sans_3({ subsets: ["latin"] });
+const source_sans_3 = Source_Sans_3({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sSan3",
+});
+const rubik = Rubik({ subsets: ["latin"], display: "swap", variable: "--font-rubik" });
 
 export const metadata: Metadata = {
   title: "FATME",
@@ -14,7 +20,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" data-theme="light">
-      <body className={`${source_sans_3.className}`}>
+      <body className={`${source_sans_3.variable} ${rubik.variable}`}>
         <Header />
         {children}
       </body>

@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sSan3: ["var(--font-sSan3)"],
+        rubik: ["var(--font-rubik)"],
+      },
       colors: {
         primary: "#F7AB0A",
       },
