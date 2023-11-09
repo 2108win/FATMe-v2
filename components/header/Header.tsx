@@ -6,8 +6,8 @@ import { ThemeSwitcher } from "../ThemeSwitcher";
 
 const Header = () => {
   return (
-    <div className="w-full shadow-md md:shadow-none sticky top-0">
-      <div className="navbar bg-base-100 max-w-6xl mx-auto rounded-box">
+    <div className="w-full fixed md:sticky md:top-4 bottom-4 z-50 px-4 transition-all duration-300">
+      <div className="navbar shadow-md bg-base-100 max-w-6xl mx-auto rounded-box">
         <div className="navbar-start">
           <Link href="/" className="btn btn-ghost normal-case text-xl">
             <Image src="/images/logo.png" alt="logo-fatme" width={40} height={40} />
@@ -16,8 +16,11 @@ const Header = () => {
         </div>
         <div className="navbar-end">
           <ThemeSwitcher />
-          <div className="dropdown dropdown-end md:hidden">
-            <label tabIndex={0} className="btn btn-ghost">
+          <div
+            tabIndex={0}
+            className="dropdown dropdown-top md:dropdown-bottom dropdown-end md:hidden"
+          >
+            <label tabIndex={0} className="btn btn-ghost m-1">
               <Image src="/icons/menu.svg" alt="menu" width={30} height={30} />
             </label>
             <ul
@@ -25,47 +28,47 @@ const Header = () => {
               className="menu menu-md dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64"
             >
               <li>
-                <Link href="/" className="text-lg hover:text-primary">
+                <Link href="/" className="link no-underline text-lg">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-lg hover:text-primary">
+                <Link href="/blog" className="link no-underline text-lg">
                   Blog
                 </Link>
                 <ul className="p-2">
                   <li>
-                    <Link href="/blog" className="text-lg hover:text-primary">
+                    <Link href="/blog" className="link no-underline text-lg">
                       Blog 1
                     </Link>
                   </li>
                   <li>
-                    <Link href="/blog" className="text-lg hover:text-primary">
+                    <Link href="/blog" className="link no-underline text-lg">
                       Blog 2
                     </Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <Link href="/contact" className="text-lg hover:text-primary">
+                <Link href="/contact" className="link no-underline text-lg">
                   Contact
                 </Link>
               </li>
             </ul>
           </div>
-          <ul className="menu menu-horizontal px-1 hidden md:flex">
+          <ul className="menu menu-horizontal space-x-1 hidden md:flex">
             <li>
-              <Link href="/" className="text-lg hover:text-primary">
+              <Link href="/" className="link no-underline text-lg">
                 Home
               </Link>
             </li>
             <li tabIndex={0}>
-              <Link href="/blog" className="text-lg hover:text-primary">
+              <Link href="/blog" className="link no-underline text-lg">
                 Blog
               </Link>
             </li>
             <li>
-              <Link href="/" className="text-lg hover:text-primary">
+              <Link href="/" className="link no-underline text-lg">
                 Contact
               </Link>
             </li>

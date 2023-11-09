@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/providers/theme-provider";
 import Header from "@/components/header/Header";
 
 const source_sans_3 = Source_Sans_3({ subsets: ["latin"] });
