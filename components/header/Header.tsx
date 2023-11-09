@@ -1,12 +1,13 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { ThemeSwitcher } from "../ThemeSwitcher";
 
 const Header = () => {
   return (
-    <div className="w-full bg-base-100 shadow-md md:shadow-none sticky top-0">
-      <div className="navbar bg-base-100 max-w-6xl mx-auto">
+    <div className="w-full shadow-md md:shadow-none sticky top-0">
+      <div className="navbar bg-base-100 max-w-6xl mx-auto rounded-box">
         <div className="navbar-start">
           <Link href="/" className="btn btn-ghost normal-case text-xl">
             <Image src="/images/logo.png" alt="logo-fatme" width={40} height={40} />
@@ -14,6 +15,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="navbar-end">
+          <ThemeSwitcher />
           <div className="dropdown dropdown-end md:hidden">
             <label tabIndex={0} className="btn btn-ghost">
               <Image src="/icons/menu.svg" alt="menu" width={30} height={30} />

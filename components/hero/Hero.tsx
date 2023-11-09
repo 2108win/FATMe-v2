@@ -10,7 +10,7 @@ const Hero = () => {
           bigTitle="Food At The Moment everytime"
           description="Chúng tôi là công ty cung cấp dịch vụ vận chuyển thức ăn chuyên nghiệp với nhiều thương hiệu nổi tiếng."
         />
-        <button className="btn btn-outline rounded-full lg:w-fit hover:border-primary hover:text-primary hover:bg-gray-50">
+        <button className="btn btn-outline rounded-btn md:w-fit hover:border-primary hover:text-primary">
           <Image src="/icons/play.svg" alt="play" width={20} height={20} />
           play video
         </button>

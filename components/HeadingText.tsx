@@ -10,8 +10,8 @@ const HeadingText: React.FC<HeadingTextProps> = ({ smallTitle, bigTitle, descrip
       {smallTitle && (
         <h5 className="text-primary text-sm font-normal uppercase mb-4">{smallTitle}</h5>
       )}
-      <h2 className="text-5xl font-bold mb-6 text-gray-900 dark:text-white">{bigTitle}</h2>
-      <p className="text-xl text-gray-700 dark:text-gray-300">{description}</p>
+      <h2 className="text-5xl font-bold mb-6">{bigTitle}</h2>
+      <p className="text-xl">{description}</p>
     </div>
   );
 };
