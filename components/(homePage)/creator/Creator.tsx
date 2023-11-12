@@ -7,25 +7,25 @@ const creatorData = [
     name: "Lã Mai Win",
     description: "19522550",
     image: "/images/img-creator-win.jpg",
-    linkContact: "https://www.facebook.com/100004642852928",
+    linkContact: "https://www.facebook.com/2108win/",
   },
   {
     name: "Lã Mai Win",
-    description: "19522550",
+    description: "Gia Lai",
     image: "/images/img-creator-win.jpg",
-    linkContact: "https://www.facebook.com/100004642852928",
+    linkContact: "https://www.facebook.com/2108win/",
   },
   {
     name: "Lã Mai Win",
-    description: "19522550",
+    description: "Đức Cơ",
     image: "/images/img-creator-win.jpg",
-    linkContact: "https://www.facebook.com/100004642852928",
+    linkContact: "https://www.facebook.com/2108win/",
   },
   {
     name: "Lã Mai Win",
-    description: "19522550",
+    description: "Tp.Hồ Chí Minh",
     image: "/images/img-creator-win.jpg",
-    linkContact: "https://www.facebook.com/100004642852928",
+    linkContact: "https://www.facebook.com/2108win/",
   },
 ];
 

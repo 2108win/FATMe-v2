@@ -46,18 +46,18 @@ const Footer = () => {
           </p>
         </aside>
         {footerData.map((item, index) => (
-          <nav key={index}>
+          <div className="mx-4" key={index}>
             <h4 className="footer-title">{item.title}</h4>
-            {item.items.map((subItem) =>
+            {item.items.map((subItem, index) =>
               subItem.link ? (
-                <Link className="link link-hover" href={subItem.link}>
+                <Link key={index} className="link link-hover" href={subItem.link}>
                   {subItem.name}
                 </Link>
               ) : (
-                <span>{subItem.name}</span>
+                <span key={index}>{subItem.name}</span>
               )
             )}
-          </nav>
+          </div>
         ))}
       </footer>
       <footer className="footer footer-center p-10 bg-base-content text-base-100">
@@ -122,9 +122,9 @@ const Footer = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="-143 145 512 512"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
-                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+                <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
 
                 <g id="SVGRepo_iconCarrier">
                   {" "}

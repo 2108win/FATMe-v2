@@ -66,7 +66,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/" className="link no-underline text-lg">
+              <Link href="/contact" className="link no-underline text-lg">
                 Contact
               </Link>
             </li>

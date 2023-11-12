@@ -14,7 +14,7 @@ const Card: React.FC<CardProps> = ({ avatar, name, description, star, content })
     <div className="card bg-base-100 rounded-box border border-neutral-content w-full flex flex-col gap-4 p-4 shadow-md hover:shadow-2xl transition-all duration-300 even:row-span-2">
       <div className="flex justify-between items-start">
         <div className="flex flex-col">
-          <Image src={avatar} alt={name} width={50} height={50} className="w-14 h-14 object-cover rounded-full" />
+          <Image src={avatar} alt={name} width={50} height={50} className="object-cover rounded-full aspect-square" />
           <h5 className="text-base font-medium">{name}</h5>
           <p className="text-sm">{description}</p>
         </div>

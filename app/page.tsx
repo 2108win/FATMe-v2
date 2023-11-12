@@ -1,3 +1,4 @@
+import Blog from "@/components/(homePage)/blog/Blog";
 import Brand from "@/components/(homePage)/brand/Brand";
 import Creator from "@/components/(homePage)/creator/Creator";
 import GetInTouch from "@/components/(homePage)/get-in-touch/GetInTouch";
@@ -17,6 +18,7 @@ export default function Home() {
         <Creator />
         <Reviews />
         {/* Blog list */}
+        <Blog />
         <GetInTouch />
       </div>
     </>
