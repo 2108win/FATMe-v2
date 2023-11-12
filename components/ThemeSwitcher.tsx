@@ -11,7 +11,7 @@ export const ThemeSwitcher = () => {
   }, []);
   return (
     <>
-      <div className="dropdown dropdown-hover btn dropdown-top md:dropdown-bottom dropdown-end">
+      <div className="dropdown dropdown-hover btn dropdown-bottom dropdown-end">
         <label tabIndex={0} className="m-1">
           {theme === "light" && (
             <Image src="/icons/sun.svg" alt="icon-sun" width={20} height={20} />

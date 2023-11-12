@@ -12,7 +12,7 @@ const HeadingText: React.FC<HeadingTextProps> = ({
   className,
 }) => {
   return (
-    <div className={`flex flex-col ${className && className}`}>
+    <div className={`flex flex-col ${className ? className : ''}`}>
       {smallTitle && (
         <h5 className="text-primary text-sm font-medium uppercase mb-4 tracking-[5px]">
           {smallTitle}

@@ -1,12 +1,23 @@
-import Hero from "@/components/hero/Hero";
-import WhatWeDo from "@/components/what-we-do/WhatWeDo";
+import Brand from "@/components/(homePage)/brand/Brand";
+import Creator from "@/components/(homePage)/creator/Creator";
+import GetInTouch from "@/components/(homePage)/get-in-touch/GetInTouch";
+import Hero from "@/components/(homePage)/hero/Hero";
+import Reviews from "@/components/(homePage)/reviews/Reviews";
+import WhatWeDo from "@/components/(homePage)/what-we-do/WhatWeDo";
+import WhoWantWhat from "@/components/(homePage)/who-want-what/WhoWantWhat";
 
 export default function Home() {
   return (
     <>
-      <div className="h-[2000px]">
+      <div className="min-h-screen space-y-16">
         <Hero />
+        <Brand />
         <WhatWeDo />
+        <WhoWantWhat />
+        <Creator />
+        <Reviews />
+        {/* Blog list */}
+        <GetInTouch />
       </div>
     </>
   );
