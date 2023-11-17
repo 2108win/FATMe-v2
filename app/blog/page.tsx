@@ -1,11 +1,20 @@
-"use client";
-import { useParams } from "next/navigation";
+import { Metadata } from 'next'
+import CardBanner from "@/components/(blog)/CardBanner";
 import React from "react";
 
-const Blog = () => {
-  const param = useParams();
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: 'WinLax - Blog'
+  }
+}
 
-  return <div className="space-y-16 container">This is blog page!</div>;
+const Blog = () => {
+
+  return (
+    <div className="space-y-16">
+      <CardBanner />
+    </div>
+  );
 };
 
 export default Blog;

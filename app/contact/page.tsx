@@ -1,9 +1,15 @@
-"use client";
-import { useParams } from "next/navigation";
+
+import { Metadata } from "next";
 import React from "react";
 
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: 'WinLax - Contact'
+  }
+}
+
+
 const Contact = () => {
-  const param = useParams();
 
   return <div className="space-y-16 container">This is Contact page!</div>;
 };

@@ -3,12 +3,51 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { themeChange } from "theme-change";
 
+const themeData = [
+  {
+    name: "light",
+    icon: "/icons/sun.svg",
+  },
+  {
+    name: "dark",
+    icon: "/icons/moon.svg",
+  },
+  {
+    name: "cupcake",
+    icon: "/icons/cupcake.svg",
+  },
+  {
+    name: "retro",
+    icon: "/icons/retro.svg",
+  },
+  {
+    name: "valentine",
+    icon: "/icons/heart.svg",
+  },
+  {
+    name: "luxury",
+    icon: "/icons/luxury.svg",
+  },
+  {
+    name: "dracula",
+    icon: "/icons/dracula.svg",
+  },
+];
+
 export const ThemeSwitcher = () => {
+
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     themeChange(false);
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      setTheme(storedTheme);
+    } else {
+      setTheme("light");
+    }
   }, []);
+
   return (
     <>
       <div className="dropdown dropdown-hover btn dropdown-bottom dropdown-end">
@@ -21,6 +60,9 @@ export const ThemeSwitcher = () => {
           )}
           {theme === "retro" && (
             <Image src="/icons/retro.svg" alt="icon-retro" width={20} height={20} />
+          )}
+          {theme === "valentine" && (
+            <Image src="/icons/heart.svg" alt="icon-heart" width={20} height={20} />
           )}
           {theme === "luxury" && (
             <Image src="/icons/luxury.svg" alt="icon-luxury" width={20} height={20} />
@@ -36,78 +78,20 @@ export const ThemeSwitcher = () => {
           tabIndex={0}
           className="dropdown-content border border-neutral-content z-20 menu p-2 shadow bg-base-100 rounded-box w-40"
         >
-          <li>
-            <button
-              onClick={() => {
-                setTheme("light");
-              }}
-              data-set-theme="light"
-              data-act-class="ACTIVECLASS"
-            >
-              <Image src="/icons/sun.svg" alt="icon-sun" width={20} height={20} />
-              Light
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => {
-                setTheme("dark");
-              }}
-              data-set-theme="dark"
-              data-act-class="ACTIVECLASS"
-            >
-              <Image src="/icons/moon.svg" alt="icon-moon" width={20} height={20} />
-              Dark
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => {
-                setTheme("cupcake");
-              }}
-              data-set-theme="cupcake"
-              data-act-class="ACTIVECLASS"
-            >
-              <Image src="/icons/cupcake.svg" alt="icon-cupcake" width={20} height={20} />
-              Cupcake
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => {
-                setTheme("retro");
-              }}
-              data-set-theme="retro"
-              data-act-class="ACTIVECLASS"
-            >
-              <Image src="/icons/retro.svg" alt="icon-retro" width={20} height={20} />
-              Retro
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => {
-                setTheme("luxury");
-              }}
-              data-set-theme="luxury"
-              data-act-class="ACTIVECLASS"
-            >
-              <Image src="/icons/luxury.svg" alt="icon-luxury" width={20} height={20} />
-              Luxury
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => {
-                setTheme("dracula");
-              }}
-              data-set-theme="dracula"
-              data-act-class="ACTIVECLASS"
-            >
-              <Image src="/icons/dracula.svg" alt="icon-dracula" width={20} height={20} />
-              Dracula
-            </button>
-          </li>
+          {themeData.map((item) => (
+            <li key={item.name}>
+              <button
+                onClick={() => {
+                  setTheme(item.name);
+                }}
+                data-set-theme={item.name}
+                data-act-class="ACTIVECLASS"
+              >
+                <Image src={item.icon} alt={item.name} width={20} height={20} />
+                <span className="capitalize">{item.name}</span>
+              </button>
+            </li>
+          ))}
         </ul>
       </div>
     </>

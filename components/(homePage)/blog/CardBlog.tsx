@@ -1,10 +1,12 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 type CardProps = {
-  link: string;
-  slug: string;
+  blogId: number;
+  rootLink: string;
   className?: string;
   image: string;
   title: string;
@@ -13,29 +15,54 @@ type CardProps = {
   categories?: string[];
 };
 
-const CardBlog: React.FC<CardProps> = ({ link = "blog/", slug, image, title, description, badge, categories, className, ...props }) => {
+const CardBlog: React.FC<CardProps> = ({
+  blogId,
+  rootLink = "blog/",
+  image,
+  title,
+  description,
+  badge,
+  categories,
+  className,
+  ...props
+}) => {
+  const router = useRouter();
   return (
-      <Link scroll={true} id={slug} href={link + slug} className={`card border border-neutral-content w-fit bg-base-100 shadow-md hover:shadow-xl transition-all duration-300 group ${className ? className : ""}`}>
-        <figure className="aspect-[4/3]">
-          <Image src={image} alt={title} width={1000} height={1000} loading="lazy" className="object-cover rounded-box"/>
-        </figure>
-        <div className="card-body p-5 basis-64">
-            <div className="badge badge-info bg-opacity-80 text-info-content p-3 rounded-btn">{badge}</div>
-          <h2 className="card-title w-full group-hover:text-primary text-ellipsis items-start truncate-2 transition-all">
-            {title}
-          </h2>
-          <p className="truncate-2">{description}</p>
-          <div className="card-actions">
-            {/* list category */}
-            {categories &&
-              categories.map((category, index) => (
-                <span key={index} className="badge badge-outline">
-                  {category}
-                </span>
-              ))}
-          </div>
+    <div
+      onClick={() => router.push(rootLink + blogId)}
+      className={`card border border-neutral-content/10 hover:border-neutral-content/50 w-fit bg-base-100 shadow hover:shadow-lg  transition-all duration-500 group md:flex-row md:items-center overflow-hidden cursor-pointer ${
+        className ? className : ""
+      }`}
+    >
+      <figure className="aspect-[4/3] shadow-md rounded-box overflow-hidden">
+        <Image
+          src={image}
+          alt={title}
+          width={1000}
+          height={1000}
+          loading="lazy"
+          className="object-cover"
+        />
+      </figure>
+      <div className="card-body p-5 basis-64 min-h-[300px]">
+        <div className="badge badge-lg badge-accent bg-opacity-10 p-3 text-accent rounded-btn">
+          {badge}
         </div>
-      </Link>
+        <h2 className="card-title w-full group-hover:text-primary text-ellipsis items-start truncate-2 transition-all">
+          {title}
+        </h2>
+        <p className="truncate-2">{description}</p>
+        <div className="card-actions">
+          {/* list category */}
+          {categories &&
+            categories.map((category, index) => (
+              <span key={index} className="badge badge-outline">
+                {category}
+              </span>
+            ))}
+        </div>
+      </div>
+    </div>
   );
 };
 

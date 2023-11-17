@@ -16,7 +16,8 @@ import "swiper/css/pagination";
 
 const cardData = [
   {
-    link: "blog/",
+    blogId: 1,
+    rootLink: "blog/",
     slug: "blog-name-1",
     image: "/images/img-creator-win.jpg",
     title: "Lã Mai Win",
@@ -25,7 +26,8 @@ const cardData = [
     categories: ["Web Developer"],
   },
   {
-    link: "blog/",
+    blogId: 2,
+    rootLink: "blog/",
     slug: "blog-name-2",
     image: "/images/img-delivery.png",
     title: "Lã Mai Win",
@@ -34,7 +36,8 @@ const cardData = [
     categories: ["Web Developer"],
   },
   {
-    link: "blog/",
+    blogId: 3,
+    rootLink: "blog/",
     slug: "blog-name-3",
     image: "/images/img-restaurant.png",
     title: "Lã Win",
@@ -43,7 +46,8 @@ const cardData = [
     categories: ["Web Developer", "FE Developer"],
   },
   {
-    link: "blog/",
+    blogId: 4,
+    rootLink: "blog/",
     slug: "blog-name-4",
     image: "/images/img-who.png",
     title: "Lã Mai Win",

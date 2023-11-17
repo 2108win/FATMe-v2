@@ -13,7 +13,7 @@ const source_sans_3 = Source_Sans_3({
 const rubik = Rubik({ subsets: ["latin"], display: "swap", variable: "--font-rubik" });
 
 export const metadata: Metadata = {
-  title: "FATME",
+  title: "WinLax - FATMEv2",
   description:
     "FATMee blog món ăn, các trang blog chất lượng về review món ăn FATMee, không những thế FATMee còn mang đến cho chúng ta những trải nghiệm ngon mắt, và những cảm xúc tuyệt vời nhất.",
 };
