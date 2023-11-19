@@ -18,8 +18,8 @@ const HeadingText: React.FC<HeadingTextProps> = ({
           {smallTitle}
         </h5>
       )}
-      <h2 className="text-5xl font-bold mb-6 max-w-xl">{bigTitle}</h2>
-      <p className="text-md max-w-2xl">{description}</p>
+      <h2 className="text-3xl md:text-4xl font-bold mb-6 max-w-xl">{bigTitle}</h2>
+      <p className="mb-4 text-md max-w-2xl">{description}</p>
     </div>
   );
 };

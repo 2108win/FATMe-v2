@@ -76,7 +76,7 @@ export const ThemeSwitcher = () => {
         </label>
         <ul
           tabIndex={0}
-          className="dropdown-content border border-neutral-content z-20 menu p-2 shadow bg-base-100 rounded-box w-40"
+          className="dropdown-content border border-neutral-content/50 z-20 menu p-2 shadow bg-base-100 rounded-box w-40"
         >
           {themeData.map((item) => (
             <li key={item.name}>

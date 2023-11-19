@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" data-theme="light">
-      <body className={`${source_sans_3.variable} ${rubik.variable}`}>
+      <body className={`${source_sans_3.variable}`}>
         <Header />
         {children}
         <Footer />

@@ -63,7 +63,7 @@ const Footer = () => {
       <footer className="footer footer-center p-10 bg-base-content text-base-100">
         <aside>
           <Image src="/images/logo.png" alt="logo-fatme" width={100} height={100} />
-          <p>Copyright © 2023 - All right reserved</p>
+          <p>Copyright by WinLax © 2023 - All right reserved</p>
         </aside>
         <nav>
           <div className="grid grid-flow-col gap-4">

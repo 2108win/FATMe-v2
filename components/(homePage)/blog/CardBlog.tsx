@@ -30,7 +30,7 @@ const CardBlog: React.FC<CardProps> = ({
   return (
     <div
       onClick={() => router.push(rootLink + blogId)}
-      className={`card border border-neutral-content/10 hover:border-neutral-content/50 w-fit bg-base-100 shadow hover:shadow-lg  transition-all duration-500 group md:flex-row md:items-center overflow-hidden cursor-pointer ${
+      className={`card border border-neutral-content/10 hover:border-neutral-content/50 w-fit bg-base-100 shadow hover:shadow-lg  transition-all duration-500 group overflow-hidden cursor-pointer ${
         className ? className : ""
       }`}
     >

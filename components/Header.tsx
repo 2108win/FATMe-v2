@@ -8,7 +8,7 @@ import Logo from "./Logo";
 const Header = () => {
   return (
     <div className="w-full sticky top-4 z-50 px-4 transition-all duration-300">
-      <div className="navbar border border-neutral-content shadow-md bg-base-100 max-w-6xl mx-auto rounded-box">
+      <div className="navbar border border-neutral-content/50 shadow-md bg-base-100/70 backdrop-blur-md max-w-6xl mx-auto rounded-box">
         <div className="navbar-start">
           <Logo />
         </div>
@@ -23,7 +23,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-md border border-neutral-content dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-64"
+              className="menu menu-md border border-neutral-content/50 dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-64"
             >
               <li>
                 <Link href="/" className="link no-underline text-lg">
@@ -36,12 +36,12 @@ const Header = () => {
                 </Link>
                 <ul className="p-2">
                   <li>
-                    <Link href="/blog" className="link no-underline text-lg">
+                    <Link href="/blog/1" className="link no-underline text-lg">
                       Blog 1
                     </Link>
                   </li>
                   <li>
-                    <Link href="/blog" className="link no-underline text-lg">
+                    <Link href="/blog/2" className="link no-underline text-lg">
                       Blog 2
                     </Link>
                   </li>
