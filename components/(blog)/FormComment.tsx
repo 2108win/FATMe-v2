@@ -14,14 +14,10 @@ const FormComment = () => {
         />
       </div>
       <div className="flex flex-col items-end gap-2 flex-1">
-        <input
-          type="text"
-          placeholder="Type here"
-          className="input input-bordered w-full"
-        />
+        <input type="text" placeholder="Type here" className="input input-bordered w-full" />
         <div className="flex gap-2">
-          <button className="btn btn-ghost">Cancel</button>
-          <button className="btn ">Comment</button>
+          <button className="btn btn-ghost normal-case">Cancel</button>
+          <button className="btn  normal-case">Comment</button>
         </div>
       </div>
     </div>
