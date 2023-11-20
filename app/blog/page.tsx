@@ -15,7 +15,7 @@ const Blog = () => {
   return (
     <div className="space-y-16">
       <CardBanner />
-      <div className="flex flex-col gap-10">
+      <div className="container flex flex-col gap-10">
         <HeadingText
           className="items-center text-center"
           bigTitle="Có thể bạn thích"
