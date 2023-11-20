@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 
 type CardProps = {
   blogId: number;
-  rootLink: string;
   className?: string;
   image: string;
   title: string;
@@ -17,7 +16,6 @@ type CardProps = {
 
 const CardBlog: React.FC<CardProps> = ({
   blogId,
-  rootLink = "blog/",
   image,
   title,
   description,
@@ -29,7 +27,7 @@ const CardBlog: React.FC<CardProps> = ({
   const router = useRouter();
   return (
     <div
-      onClick={() => router.push(rootLink + blogId)}
+      onClick={() => router.push("/blog/" + blogId)}
       className={`card border border-neutral-content/10 hover:border-neutral-content/50 w-fit bg-base-100 shadow hover:shadow-lg  transition-all duration-500 group overflow-hidden cursor-pointer ${
         className ? className : ""
       }`}
@@ -39,7 +37,7 @@ const CardBlog: React.FC<CardProps> = ({
           src={image}
           alt={title}
           width={1000}
-          height={1000}
+          height={750}
           loading="lazy"
           className="object-cover"
         />

@@ -16,7 +16,6 @@ import Link from "next/link";
 const cardData = [
   {
     blogId: 1,
-    rootLink: "blog/",
     image: "/images/blog/blog-banner.jpg",
     title: "Những món ăn nhất định phải thử trong đời đỉnh cao của ẩm thực",
     description: "Link: https://www.youtube.com/watch?v=Qq4j1LtCdww",
@@ -26,7 +25,6 @@ const cardData = [
   },
   {
     blogId: 2,
-    rootLink: "blog/",
     image: "/images/img-delivery.png",
     title: "Những món ăn nhất định phải thử trong đời đỉnh cao của ẩm thực",
     description: "Link: https://www.youtube.com/watch?v=Qq4j1LtCdww",
@@ -36,7 +34,6 @@ const cardData = [
   },
   {
     blogId: 3,
-    rootLink: "blog/",
     image: "/images/img-restaurant.png",
     title: "Lã Win",
     description: "Link: https://www.youtube.com/watch?v=Qq4j1LtCdww",
@@ -46,7 +43,6 @@ const cardData = [
   },
   {
     blogId: 4,
-    rootLink: "blog/",
     image: "/images/img-who.png",
     title: "Những món ăn nhất định phải thử trong đời đỉnh cao của ẩm thực",
     description: "Link: https://www.youtube.com/watch?v=Qq4j1LtCdww",
@@ -93,7 +89,7 @@ const CardBanner = () => {
           {cardData.map((item, index) => (
             <SwiperSlide key={index}>
               <div
-                onClick={() => router.push(item.rootLink + item.blogId)}
+                onClick={() => router.replace("/blog/" + item.blogId)}
                 className="card border border-neutral-content/10 hover:border-neutral-content/50 w-fit h-full min-h-max bg-base-100 shadow hover:shadow-lg transition-all duration-500 group md:flex-row md:items-center overflow-hidden cursor-pointer"
               >
                 <figure className="aspect-[3/2] shadow-md rounded-box overflow-hidden">
