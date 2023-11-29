@@ -5,12 +5,19 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+import SessionProvider from "@/utils/SessionProvider";
+import { getServerSession } from "next-auth";
+
 const source_sans_3 = Source_Sans_3({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sSan3",
 });
-const rubik = Rubik({ subsets: ["latin"], display: "swap", variable: "--font-rubik" });
+const rubik = Rubik({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-rubik",
+});
 
 export const metadata: Metadata = {
   title: "WinLax - FATMEv2",
@@ -18,13 +25,23 @@ export const metadata: Metadata = {
     "FATMee blog món ăn, các trang blog chất lượng về review món ăn FATMee, không những thế FATMee còn mang đến cho chúng ta những trải nghiệm ngon mắt, và những cảm xúc tuyệt vời nhất.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const session = await getServerSession();
   return (
     <html lang="en" data-theme="light">
-      <body className={`${source_sans_3.variable}`}>
-        <Header />
-        {children}
-        <Footer />
+      <body
+        suppressHydrationWarning={true}
+        className={`${source_sans_3.variable}`}
+      >
+        <SessionProvider session={session}>
+          <Header />
+          {children}
+          <Footer />
+        </SessionProvider>
       </body>
     </html>
   );

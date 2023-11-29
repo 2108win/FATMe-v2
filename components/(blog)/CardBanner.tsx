@@ -90,9 +90,9 @@ const CardBanner = () => {
             <SwiperSlide key={index}>
               <div
                 onClick={() => router.replace("/blog/" + item.blogId)}
-                className="card border border-neutral-content/10 hover:border-neutral-content/50 w-fit h-full min-h-max bg-base-100 shadow hover:shadow-lg transition-all duration-500 group md:flex-row md:items-center overflow-hidden cursor-pointer"
+                className="group card h-full min-h-max w-fit cursor-pointer overflow-hidden border border-neutral-content/10 bg-base-100 shadow transition-all duration-500 hover:border-neutral-content/50 hover:shadow-lg md:flex-row md:items-center"
               >
-                <figure className="aspect-[3/2] shadow-md rounded-box overflow-hidden">
+                <figure className="rounded-box aspect-[3/2] overflow-hidden shadow-md">
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -102,16 +102,16 @@ const CardBanner = () => {
                     className="object-cover"
                   />
                 </figure>
-                <div className="card-body p-5 basis-64 md:basis-4/5 h-full min-h-[300px]">
-                  <div className="badge badge-lg badge-accent bg-opacity-10 p-3 text-accent rounded-btn">
+                <div className="card-body h-full min-h-[300px] basis-64 p-5 md:basis-4/5">
+                  <div className="badge badge-warning badge-outline rounded-btn badge-lg p-3">
                     {item.badge}
                   </div>
-                  <h2 className="card-title w-full text-2xl md:text-4xl font-bold group-hover:text-primary text-ellipsis items-start transition-all truncate-3 pb-1">
+                  <h2 className="truncate-3 card-title w-full items-start text-ellipsis pb-1 text-2xl font-bold transition-all group-hover:text-primary md:text-4xl">
                     {item.title}
                   </h2>
                   <Link
                     href={item.linkReference}
-                    className="mt-auto md:mt-6 truncate-2 hover:text-primary hover:underline"
+                    className="truncate-2 mt-auto hover:text-primary hover:underline md:mt-6"
                   >
                     {item.description}
                   </Link>
@@ -119,7 +119,10 @@ const CardBanner = () => {
                     {/* list category */}
                     {item.categories &&
                       item.categories.map((category, index) => (
-                        <span key={index} className="badge badge-outline">
+                        <span
+                          key={index}
+                          className="badge badge-warning badge-outline"
+                        >
                           {category}
                         </span>
                       ))}

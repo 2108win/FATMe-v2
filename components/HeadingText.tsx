@@ -14,12 +14,14 @@ const HeadingText: React.FC<HeadingTextProps> = ({
   return (
     <div className={`flex flex-col ${className ? className : ""}`}>
       {smallTitle && (
-        <h5 className="text-primary text-sm font-medium uppercase mb-4 tracking-[5px]">
+        <h5 className="mb-4 text-sm font-medium uppercase tracking-[5px] text-primary">
           {smallTitle}
         </h5>
       )}
-      <h2 className="text-3xl md:text-4xl font-bold mb-6 max-w-xl">{bigTitle}</h2>
-      {description && <p className="mb-4 text-md max-w-2xl">{description}</p>}
+      <h2 className="mb-6 max-w-xl text-3xl font-bold md:text-4xl">
+        {bigTitle}
+      </h2>
+      {description && <p className="text-md mb-4 max-w-2xl">{description}</p>}
     </div>
   );
 };

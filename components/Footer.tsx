@@ -37,12 +37,13 @@ const footerData = [
 
 const Footer = () => {
   return (
-    <div className="text-base-content bg-base-300 w-full mt-16">
+    <div className="mt-16 w-full bg-base-300 text-base-content">
       <footer className="container footer">
         <aside>
           <Logo />
-          <p className="px-4 py-2 max-w-[400px]">
-            Yêu là phải nói, đói là phải ăn, gọi FATMee thật nhanh, giao tận tay khách
+          <p className="max-w-[400px] px-4 py-2">
+            Yêu là phải nói, đói là phải ăn, gọi FATMee thật nhanh, giao tận tay
+            khách
           </p>
         </aside>
         {footerData.map((item, index) => (
@@ -50,19 +51,28 @@ const Footer = () => {
             <h4 className="footer-title">{item.title}</h4>
             {item.items.map((subItem, index) =>
               subItem.link ? (
-                <Link key={index} className="link link-hover" href={subItem.link}>
+                <Link
+                  key={index}
+                  className="link-hover link"
+                  href={subItem.link}
+                >
                   {subItem.name}
                 </Link>
               ) : (
                 <span key={index}>{subItem.name}</span>
-              )
+              ),
             )}
           </div>
         ))}
       </footer>
-      <footer className="footer footer-center p-10 bg-base-content text-base-100">
+      <footer className="footer footer-center bg-base-content p-10 text-base-100">
         <aside>
-          <Image src="/images/logo.png" alt="logo-fatme" width={100} height={100} />
+          <Image
+            src="/images/logo.png"
+            alt="logo-fatme"
+            width={100}
+            height={100}
+          />
           <p>Copyright by WinLax © 2023 - All right reserved</p>
         </aside>
         <nav>
@@ -124,7 +134,11 @@ const Footer = () => {
               >
                 <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
-                <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
 
                 <g id="SVGRepo_iconCarrier">
                   {" "}

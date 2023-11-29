@@ -1,17 +1,16 @@
-import { Metadata } from 'next'
+import { Metadata } from "next";
 import CardBanner from "@/components/(blog)/CardBanner";
 import React from "react";
-import ReferencesBlog from '@/components/ReferencesBlog';
-import HeadingText from '@/components/HeadingText';
+import ReferencesBlog from "@/components/ReferencesBlog";
+import HeadingText from "@/components/HeadingText";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'WinLax - Blog'
-  }
+    title: "WinLax - Blog",
+  };
 }
 
 const Blog = () => {
-
   return (
     <div className="space-y-16">
       <CardBanner />

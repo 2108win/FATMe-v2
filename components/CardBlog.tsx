@@ -28,11 +28,11 @@ const CardBlog: React.FC<CardProps> = ({
   return (
     <div
       onClick={() => router.push("/blog/" + blogId)}
-      className={`card border border-neutral-content/10 hover:border-neutral-content/50 w-fit bg-base-100 shadow hover:shadow-lg  transition-all duration-500 group overflow-hidden cursor-pointer ${
+      className={`group card w-fit cursor-pointer overflow-hidden border border-neutral-content/10 bg-base-100  shadow transition-all duration-500 hover:border-neutral-content/50 hover:shadow-lg ${
         className ? className : ""
       }`}
     >
-      <figure className="aspect-[4/3] shadow-md rounded-box overflow-hidden">
+      <figure className="rounded-box aspect-[4/3] overflow-hidden shadow-md">
         <Image
           src={image}
           alt={title}
@@ -42,11 +42,11 @@ const CardBlog: React.FC<CardProps> = ({
           className="object-cover"
         />
       </figure>
-      <div className="card-body p-5 basis-64 min-h-[300px]">
-        <div className="badge badge-lg badge-accent bg-opacity-10 p-3 text-accent rounded-btn">
+      <div className="card-body min-h-[300px] basis-64 p-5">
+        <div className="badge badge-warning badge-outline rounded-btn badge-lg bg-opacity-10 p-3">
           {badge}
         </div>
-        <h2 className="card-title w-full group-hover:text-primary text-ellipsis items-start truncate-2 transition-all">
+        <h2 className="truncate-2 card-title w-full items-start text-ellipsis transition-all group-hover:text-primary">
           {title}
         </h2>
         <p className="truncate-2">{description}</p>
@@ -54,7 +54,7 @@ const CardBlog: React.FC<CardProps> = ({
           {/* list category */}
           {categories &&
             categories.map((category, index) => (
-              <span key={index} className="badge badge-outline">
+              <span key={index} className="badge badge-warning badge-outline">
                 {category}
               </span>
             ))}
