@@ -12,9 +12,12 @@ export const GET = async (req: Request, { params }: any) => {
       include: { user: true },
     });
 
-    return new NextResponse(JSON.stringify(post), { status: 200 });
+    return NextResponse.json(JSON.stringify(post), { status: 200 });
   } catch (err) {
     console.log(err);
-    return new NextResponse("Something went wrong!", { status: 500 });
+    return NextResponse.json(
+      { error: "Something went wrong!" },
+      { status: 500 },
+    );
   }
 };

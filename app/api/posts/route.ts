@@ -24,10 +24,13 @@ export const GET = async (req: Request) => {
       prisma.post.findMany(query),
       prisma.post.count({ where: query.where }),
     ]);
-    return new NextResponse(JSON.stringify({ data, count }), { status: 200 });
+    return NextResponse.json(JSON.stringify({ data, count }), { status: 200 });
   } catch (err) {
     console.log(err);
-    return new NextResponse("Something went wrong!", { status: 500 });
+    return NextResponse.json(
+      { error: "Something went wrong!" },
+      { status: 500 },
+    );
   }
 };
 
@@ -36,7 +39,7 @@ export const POST = async (req: Response) => {
   const session = useSession();
 
   if (!session || session.status !== "authenticated" || !session.data?.user) {
-    return new NextResponse("Not Authenticated!", { status: 401 });
+    return NextResponse.json({ error: "Not Authenticated!" }, { status: 401 });
   }
 
   try {
@@ -45,9 +48,12 @@ export const POST = async (req: Response) => {
       data: { ...body, userEmail: session.data.user.email },
     });
 
-    return new NextResponse(JSON.stringify(post), { status: 200 });
+    return NextResponse.json(JSON.stringify(post), { status: 200 });
   } catch (err) {
     console.log(err);
-    return new NextResponse("Something went wrong!", { status: 500 });
+    return NextResponse.json(
+      { error: "Something went wrong!" },
+      { status: 500 },
+    );
   }
 };

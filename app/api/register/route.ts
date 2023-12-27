@@ -11,7 +11,7 @@ export const POST = async (request: any) => {
   const existingUser = await User.findOne({ email });
 
   if (existingUser) {
-    return new NextResponse("User already exists", { status: 400 });
+    return NextResponse.json({ error: "User already exists" }, { status: 400 });
   }
 
   const hashedPassword = await bcrypt.hash(password, 8);
@@ -19,8 +19,11 @@ export const POST = async (request: any) => {
 
   try {
     await newUser.save();
-    return new NextResponse("User created", { status: 200 });
+    return NextResponse.json({ error: "User created" }, { status: 200 });
   } catch (error) {
-    return new NextResponse("Something went wrong", { status: 500 });
+    return NextResponse.json(
+      { error: "Something went wrong" },
+      { status: 500 },
+    );
   }
 };
