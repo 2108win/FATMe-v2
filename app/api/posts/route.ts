@@ -35,7 +35,7 @@ export const GET = async (req: Request) => {
 };
 
 // CREATE A POST
-export const POST = async (req: Response) => {
+export const POST = async (req: Request) => {
   const session = useSession();
 
   if (!session || session.status !== "authenticated" || !session.data?.user) {
