@@ -50,12 +50,12 @@ const UserButton = () => {
           className="menu dropdown-content rounded-box z-20 w-40 border border-neutral-content/50 bg-base-100 p-2 shadow"
         >
           <li>
-            <Link href="/manage/user" className="link text-lg no-underline">
+            <Link href="/manage-user" className="link text-lg no-underline">
               Manage user
             </Link>
           </li>
           <li>
-            <Link href="/manage/blog" className="link text-lg no-underline">
+            <Link href="/manage-blog" className="link text-lg no-underline">
               Manage blog
             </Link>
           </li>
@@ -89,12 +89,12 @@ const UserButton = () => {
       </div>
       <ul className="p-2 md:hidden">
         <li>
-          <Link href="/manage/user" className="link text-lg no-underline">
+          <Link href="/manage-user" className="link text-lg no-underline">
             Manage user
           </Link>
         </li>
         <li>
-          <Link href="/manage/blog" className="link text-lg no-underline">
+          <Link href="/manage-blog" className="link text-lg no-underline">
             Manage blog
           </Link>
         </li>

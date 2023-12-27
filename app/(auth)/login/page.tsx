@@ -78,9 +78,11 @@ const Login = () => {
           router.replace("/");
         }
       } catch (error) {
+        setLoading(false);
         console.log(error);
       }
     }
+    setLoading(false);
   };
 
   if (sessionStatus === "loading") {
@@ -94,7 +96,7 @@ const Login = () => {
   return (
     sessionStatus !== "authenticated" && (
       <div className="mx-auto mt-16 flex max-w-6xl items-center justify-center px-4">
-        <div className="card rounded-box w-full max-w-md border  border-neutral-content/50 bg-base-100 bg-base-100/70 shadow-lg">
+        <div className="card w-full max-w-md rounded-box border  border-neutral-content/50 bg-base-100 bg-base-100/70 shadow-lg">
           <div className="card-body">
             <h2 className="card-title text-3xl font-bold">
               Login
@@ -148,6 +150,9 @@ const Login = () => {
                 className="btn mt-4 w-full bg-primary text-white hover:text-accent-content"
               >
                 Login
+                {loading && (
+                  <span className="loading loading-spinner transition-all duration-300"></span>
+                )}
               </button>
             </form>
             <p className="mt-4 text-center">

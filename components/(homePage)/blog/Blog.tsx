@@ -1,11 +1,22 @@
-"use client";
-
 import HeadingText from "@/components/HeadingText";
 import React from "react";
 
 import ReferencesBlog from "@/components/ReferencesBlog";
 
-const Blog = () => {
+const getData = async () => {
+  const res = await fetch(`${process.env.BASE_URL}/api/posts`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Write something wrong");
+  }
+  return res.json();
+};
+
+const Blog = async () => {
+  const cardData = await getData();
+
   return (
     <div className="container flex flex-col gap-10">
       <HeadingText
@@ -14,7 +25,7 @@ const Blog = () => {
         bigTitle="Các Blog mới nhất từ FatMe"
         description="Tin tức mới nhất về FatMe"
       />
-      <ReferencesBlog />
+      <ReferencesBlog data={cardData?.data} />
     </div>
   );
 };

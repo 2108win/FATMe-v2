@@ -6,8 +6,11 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import User from "@/models/User";
 import connect from "@/utils/db";
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import prisma from "@/utils/connect";
 
 const handler = NextAuth({
+  adapter: PrismaAdapter(prisma),
   providers: [
     CredentialsProvider({
       id: "credentials",
@@ -16,7 +19,7 @@ const handler = NextAuth({
         email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials) {
+      async authorize(credentials: any) {
         await connect();
         try {
           const user = await User.findOne({ email: credentials.email });
@@ -29,7 +32,7 @@ const handler = NextAuth({
               return user;
             }
           }
-        } catch (err) {
+        } catch (err: any) {
           throw new Error(err);
         }
       },
@@ -85,6 +88,7 @@ const handler = NextAuth({
           return false;
         }
       }
+      return false;
     },
   },
 });

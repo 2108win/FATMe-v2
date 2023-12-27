@@ -1,6 +1,6 @@
 type HeadingTextProps = {
   smallTitle?: string;
-  bigTitle: string;
+  bigTitle?: string;
   description?: string;
   className?: string;
 };
@@ -21,7 +21,9 @@ const HeadingText: React.FC<HeadingTextProps> = ({
       <h2 className="mb-6 max-w-xl text-3xl font-bold md:text-4xl">
         {bigTitle}
       </h2>
-      {description && <p className="text-md mb-4 max-w-2xl">{description}</p>}
+      {description && (
+        <p className="text-md mb-4 max-w-2xl text-balance">{description}</p>
+      )}
     </div>
   );
 };

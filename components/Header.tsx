@@ -3,11 +3,12 @@ import Link from "next/link";
 import Logo from "./Logo";
 import UserButton from "./UserButton";
 import ThemeSwitcher from "./ThemeSwitcher";
+// import { UserButton } from "@clerk/nextjs";
 
 const Header = () => {
   return (
     <div className="sticky top-4 z-50 w-full px-4 transition-all duration-300">
-      <div className="navbar rounded-box mx-auto max-w-6xl border border-neutral-content/50 bg-base-100/70 shadow-md backdrop-blur-md">
+      <div className="navbar mx-auto max-w-6xl rounded-box border border-neutral-content/50 bg-base-100/70 shadow-md backdrop-blur-md">
         <div className="justify-start">
           <Logo />
         </div>
@@ -17,7 +18,7 @@ const Header = () => {
             <label tabIndex={0} className="btn btn-ghost m-1">
               <Image src="/icons/menu.svg" alt="menu" width={30} height={30} />
             </label>
-            <ul className="menu dropdown-content rounded-box menu-md z-[1] w-64 border border-neutral-content/50 bg-base-100 p-2 shadow">
+            <ul className="menu dropdown-content menu-md z-[1] w-64 rounded-box border border-neutral-content/50 bg-base-100 p-2 shadow">
               <li>
                 <Link href="/" className="link text-lg no-underline">
                   Home
@@ -27,18 +28,6 @@ const Header = () => {
                 <Link href="/blog" className="link text-lg no-underline">
                   Blog
                 </Link>
-                <ul className="p-2">
-                  <li>
-                    <Link href="/blog/1" className="link text-lg no-underline">
-                      Blog 1
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/blog/2" className="link text-lg no-underline">
-                      Blog 2
-                    </Link>
-                  </li>
-                </ul>
               </li>
               <li>
                 <Link href="/contact" className="link text-lg no-underline">

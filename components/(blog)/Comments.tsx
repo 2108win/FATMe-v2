@@ -1,11 +1,12 @@
 import Image from "next/image";
 import React from "react";
 import FormComment from "./FormComment";
+import { useSession } from "next-auth/react";
 // require blogId, commentId, comment, author, date, replies
 const commentsData = [
   {
-    blogId: 1,
-    commentId: 1,
+    blogId: 11123321,
+    commentId: 1123,
     commentContent:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, accusamus. lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, accusamus. lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, accusamus. lorem",
     authorCommentName: "Lã Win",
@@ -13,8 +14,8 @@ const commentsData = [
     commentDate: "22 tháng 12 năm 2021",
     replies: [
       {
-        commentId: 1,
-        replyId: 1,
+        commentId: 41245125345326,
+        replyId: 324543634264362,
         replyContent:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, accusamus.",
         authorReplyName: "Lã Win 2",
@@ -22,8 +23,8 @@ const commentsData = [
         replyDate: "22 tháng 12 năm 2021",
       },
       {
-        commentId: 1,
-        replyId: 2,
+        commentId: 12351416345,
+        replyId: 1364346254,
         replyContent:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, accusamus.",
         authorReplyName: "Lã Win 2",
@@ -33,8 +34,8 @@ const commentsData = [
     ],
   },
   {
-    blogId: 1,
-    commentId: 2,
+    blogId: 13463463634,
+    commentId: 12412341246365,
     commentContent:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, accusamus.",
     authorCommentName: "Lã Win",
@@ -42,8 +43,8 @@ const commentsData = [
     commentDate: "22 tháng 12 năm 2021",
     replies: [
       {
-        commentId: 2,
-        replyId: 1,
+        commentId: 13645326343545,
+        replyId: 2352364321,
         replyContent:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, accusamus.",
         authorReplyName: "Lã Win 2",
@@ -51,8 +52,8 @@ const commentsData = [
         replyDate: "22 tháng 12 năm 2021",
       },
       {
-        commentId: 2,
-        replyId: 2,
+        commentId: 234613464652,
+        replyId: 2234783,
         replyContent:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, accusamus.",
         authorReplyName: "Lã Win 2",

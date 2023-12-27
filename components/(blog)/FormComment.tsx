@@ -1,7 +1,31 @@
+"use client";
+
+import { useSession } from "next-auth/react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const FormComment = () => {
+  const { data: session }: any = useSession();
+
+  if (!session) {
+    return (
+      <div className="flex items-center gap-2">
+        <input
+          type="text"
+          className="input input-bordered input-disabled w-full"
+          value="You need login to comment!!"
+          readOnly
+        />
+        <Link
+          href="/login"
+          className="btn bg-primary text-lg text-white no-underline"
+        >
+          Sign In
+        </Link>
+      </div>
+    );
+  }
   return (
     <div className="flex gap-4">
       <div className="h-12 w-12 overflow-hidden rounded-full">

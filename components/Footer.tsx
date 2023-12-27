@@ -9,11 +9,11 @@ const footerData = [
     items: [
       {
         name: "Tin tức",
-        link: "#",
+        link: "/blog",
       },
       {
         name: "Tin tức mới nhất",
-        link: "#",
+        link: "/blog",
       },
     ],
   },

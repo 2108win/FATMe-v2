@@ -23,6 +23,7 @@ const Register = () => {
   }, [sessionStatus, router]);
 
   const handleSubmit = async (e: any) => {
+    setPasswordError(null);
     e.preventDefault();
     const isValidEmail = (email: string) => {
       return /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
@@ -83,15 +84,24 @@ const Register = () => {
           setLoading(false);
           setError("");
           router.push("/login");
+        } else {
+          setLoading(false);
+          setPasswordError("Something wrong");
+          setTimeout(() => {
+            setError("");
+          }, 10000);
+          setLoading(false);
         }
       } catch (error) {
         setLoading(false);
-        setError("Something went wrong");
+        setError("Something wrong");
         setTimeout(() => {
           setError("");
         }, 10000);
+        setLoading(false);
         console.log(error);
       }
+      setLoading(false);
     }
   };
 
@@ -107,7 +117,7 @@ const Register = () => {
   return (
     sessionStatus !== "authenticated" && (
       <div className="mx-auto mt-16 flex max-w-6xl items-center justify-center px-4">
-        <div className="card rounded-box w-full max-w-md border  border-neutral-content/50 bg-base-100 bg-base-100/70 shadow-lg">
+        <div className="card w-full max-w-md rounded-box border  border-neutral-content/50 bg-base-100 bg-base-100/70 shadow-lg">
           <div className="card-body">
             <h2 className="card-title text-3xl font-bold">
               Register

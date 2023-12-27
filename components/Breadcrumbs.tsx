@@ -11,7 +11,7 @@ type BreadcrumbsProps = {
     icon?: string;
     label: string;
   }[];
-  lastLink: string;
+  lastLink?: string;
 };
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({

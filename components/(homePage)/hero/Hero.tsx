@@ -20,7 +20,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="container grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+    <div className="container grid grid-cols-1 items-center gap-6 lg:grid-cols-2">
       <div className="flex flex-col gap-10">
         <HeadingText
           smallTitle="Chúng tôi"
@@ -29,34 +29,59 @@ const Hero = () => {
         />
         <button
           onClick={playVideo}
-          className="btn btn-outline rounded-btn md:w-fit hover:border-primary hover:text-primary"
+          className="btn btn-outline rounded-btn hover:border-primary hover:text-primary md:w-fit"
         >
           {isPlaying ? (
-            <span className="flex gap-2 items-center">
-              <Image src="/icons/pause.svg" alt="icon-pause" width={20} height={20} />
+            <span className="flex items-center gap-2">
+              <Image
+                src="/icons/pause.svg"
+                alt="icon-pause"
+                width={20}
+                height={20}
+              />
               Pause video
             </span>
           ) : (
-            <span className="flex gap-2 items-center">
-              <Image src="/icons/play.svg" alt="icon-play" width={20} height={20} />
+            <span className="flex items-center gap-2">
+              <Image
+                src="/icons/play.svg"
+                alt="icon-play"
+                width={20}
+                height={20}
+              />
               Play video
             </span>
           )}
         </button>
       </div>
-      <div className="relative flex justify-center items-center aspect-video rounded-box overflow-hidden z-0 group">
-        <video ref={videoRef} controls className="w-full h-auto" poster="/images/poster-video.png">
+      <div className="group relative z-0 flex aspect-video items-center justify-center overflow-hidden rounded-box">
+        <video
+          ref={videoRef}
+          controls
+          className="h-auto w-full"
+          poster="/images/poster-video.png"
+        >
           <source src="/videos/videofatme.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div
           onClick={playVideo}
-          className="absolute hidden group-hover:flex items-center justify-center btn btn-circle"
+          className="btn btn-circle absolute hidden items-center justify-center group-hover:flex"
         >
           {isPlaying ? (
-            <Image src="/icons/pause.svg" alt="icon-pause" width={30} height={30} />
+            <Image
+              src="/icons/pause.svg"
+              alt="icon-pause"
+              width={30}
+              height={30}
+            />
           ) : (
-            <Image src="/icons/play.svg" alt="icon-play" width={30} height={30} />
+            <Image
+              src="/icons/play.svg"
+              alt="icon-play"
+              width={30}
+              height={30}
+            />
           )}
         </div>
       </div>

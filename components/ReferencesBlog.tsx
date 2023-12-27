@@ -49,8 +49,11 @@ const cardData = [
     categories: ["Web Developer", "Frontend Developer", "Designer"],
   },
 ];
+type Props = {
+  data?: any;
+};
 
-const ReferencesBlog = () => {
+const ReferencesBlog: React.FC<Props> = ({ data }) => {
   const swiperParams: SwiperOptions = {
     slidesPerView: 1,
     spaceBetween: 10,
@@ -93,9 +96,16 @@ const ReferencesBlog = () => {
         modules={[Scrollbar, Autoplay, Navigation, Pagination]}
         className="!p-10 !pt-0"
       >
-        {cardData.map((item, index) => (
-          <SwiperSlide key={index}>
-            <CardBlog {...item} />
+        {data?.map((item: any) => (
+          <SwiperSlide key={item.id}>
+            <CardBlog
+              slug={item.slug}
+              blogId={item.id}
+              image={item?.image}
+              title={item.title}
+              description={item.description}
+              category={item.categorySlug}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
